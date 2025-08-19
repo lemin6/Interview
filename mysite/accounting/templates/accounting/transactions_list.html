@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>История транзакций</title>
+</head>
+<body>
+    <h1>История транзакций</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Дата</th>
+                <th>Дебет</th>
+                <th>Кредит</th>
+                <th>Сумма</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.id }}</td>
+                <td>{{ transaction.created_at }}</td>
+                <td>{{ transaction.debit_account.name }}</td>
+                <td>{{ transaction.credit_account.name }}</td>
+                <td>{{ transaction.amount }}</td>
+                <td>{{ transaction.description }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">Нет транзакций</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><a href="{% url 'transaction_create' %}">Создать транзакцию</a></p>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h2>История транзакций</h2>-->
+<!--<a href="{% url 'transaction_create' %}">Создать транзакцию</a>-->
+<!--<table border="1">-->
+<!--  <tr>-->
+<!--    <th>Дата</th>-->
+<!--    <th>Дебет</th>-->
+<!--    <th>Кредит</th>-->
+<!--    <th>Сумма</th>-->
+<!--    <th>Описание</th>-->
+<!--  </tr>-->
+<!--  {% for tr in transactions %}-->
+<!--  <tr>-->
+<!--    <td>{{ tr.created_at }}</td>-->
+<!--    <td>{{ tr.debit }}</td>-->
+<!--    <td>{{ tr.credit }}</td>-->
+<!--    <td>{{ tr.amount }}</td>-->
+<!--    <td>{{ tr.description }}</td>-->
+<!--  </tr>-->
+<!--  {% endfor %}-->
+<!--</table>-->
+
+<!--</body>-->
+<!--</html>-->

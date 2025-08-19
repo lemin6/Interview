@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Список счетов</h2>
+<table border="1">
+  <tr>
+    <th>Номер</th>
+    <th>Название</th>
+    <th>Тип</th>
+    <th>Баланс</th>
+  </tr>
+  {% for account in accounts %}
+  <tr>
+    <td>{{ account.number }}</td>
+    <td>{{ account.name }}</td>
+    <td>{{ account.get_type_display }}</td>
+    <td>{{ account.balance }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
