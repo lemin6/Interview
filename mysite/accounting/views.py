@@ -6,13 +6,13 @@ from .forms import TransactionForm
 def account_list(request):
     """Список счетов"""
     accounts = Account.objects.all()
-    return render(request, "accounting/account_list.html", {"accounts": accounts})
+    return render(request, "accounting/accounts_list.html", {"accounts": accounts})
 
 
 def transaction_list(request):
     """История транзакций"""
     transactions = Transaction.objects.all().order_by("-created_at")
-    return render(request, "accounting/transaction_list.html", {"transactions": transactions})
+    return render(request, "accounting/transactions_list.html", {"transactions": transactions})
 
 
 def transaction_create(request):

@@ -1,0 +1,53 @@
+[
+  {
+    "model": "accounting.balancearticle",
+    "pk": 1,
+    "fields": {
+      "name": "Активы n"
+    }
+  },
+  {
+    "model": "accounting.balancegroup",
+    "pk": 1,
+    "fields": {
+      "name": "Касса",
+      "article": 1
+    }
+  },
+  {
+    "model": "accounting.account",
+    "pk": 1,
+    "fields": {
+      "number": "1000000001",
+      "name": "Касса",
+      "type": "A",
+      "group": 1,
+      "balance": "0.00"
+    }
+  },
+  {
+    "model": "accounting.account",
+    "pk": 2,
+    "fields": {
+      "number": "2000000001",
+      "name": "Банк",
+      "type": "A",
+      "group": 1,
+      "balance": "0.00"
+    }
+  },
+  {
+    "model": "accounting.transaction",
+    "pk": 1,
+    "fields": {
+      "debit_account": 1,
+      "credit_account": 2,
+      "amount": "1000.00",
+      "description": "Тестовая транзакция",
+      "is_applied": false,
+      "is_annulled": false,
+      "reversal_of": null,
+      "created_at": "2025-08-19T00:00:00Z"
+    }
+  }
+]
